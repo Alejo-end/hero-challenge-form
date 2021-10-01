@@ -100,9 +100,10 @@ function IndexPage() {
               <option value="No">No</option>
             </select>
           </div>
+          <ErrorMessage>{errors.fieldName?.message}</ErrorMessage>
+
           <div className="form-group form-check">
-            <div className="w-min">
-              <ErrorMessage>{errors.fieldName?.message}</ErrorMessage>
+            <div className="align-center">
               <Input
                 name="fieldName"
                 type="checkbox"
@@ -114,7 +115,7 @@ function IndexPage() {
                 Advances
               </label>
             </div>
-            <div className="w-min">
+            <div className="align-center">
               <Input
                 name="alerts"
                 type="checkbox"
@@ -125,7 +126,7 @@ function IndexPage() {
                 Alerts
               </label>
             </div>
-            <div className="w-min">
+            <div className="align-center">
               <Input
                 name="other"
                 type="checkbox"
@@ -137,21 +138,19 @@ function IndexPage() {
               </label>
             </div>
           </div>
-          <div className="form-group">
-            <Button
-              type="submit"
-              children="Submit"
-              color="primary"
-              onClick={handleSubmit}
-            />
-            <button
-              type="button"
-              onClick={() => reset()}
-              className="btn bg-secondary"
-            >
-              Reset
-            </button>
-          </div>
+          <Button
+            type="submit"
+            children="Submit"
+            color="primary"
+            onClick={handleSubmit}
+          />
+          <button
+            type="button"
+            onClick={() => reset()}
+            className="btn bg-secondary"
+          >
+            Reset
+          </button>
         </form>
       </div>
     </Layout>

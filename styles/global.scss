@@ -9,6 +9,7 @@
   --secondary-color: #3f8794;
   --secondary-color-light: #d1e8e6;
   --shadow-color: #ddd;
+  --shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   font-family: "OpenSans", sans-serif;
   font-size: 12px;
 }
@@ -41,6 +42,13 @@
   width: 1200px;
 }
 
+.title {
+  margin-bottom: 10px;
+}
+.sub-title {
+  color: gray;
+}
+
 .error-msg {
   color: var(--danger);
   font: 1em sans-serif;
@@ -56,28 +64,38 @@
 
 .bg-primary {
   background-color: var(--primary-color);
+  color: var(--white);
 }
 
 .bg-secondary {
-  background-color: var(--secondary-color);
+  background-color: var(--white);
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  font-weight: normal;
+  font-size: 1.2rem;
+  font-weight: bold;
   box-shadow: var(--shadow);
   border-radius: 100px;
-  padding: 10px 30px;
+  padding: 12px 50px;
   border: 0px;
-  margin: 5px;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   &:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color-light);
+    color: var(--secondary-color);
+    box-shadow: none;
   }
 }
+
+.m-btn {
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
 .form-field {
   padding: 10px;
   outline: none;
@@ -85,6 +103,14 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+.checkbox {
+  width: 30px;
+  border-radius: 0;
+  height: 30px;
+  margin-right: 10px;
+}
+
 .has-error {
   border: 3px solid var(--danger);
   background-color: var(--danger-bg);
@@ -94,8 +120,9 @@
   width: 100%;
 }
 
-.w-min {
-  width: min-content;
+.align-center {
+  display: flex;
+  align-items: center;
 }
 
 .row {
@@ -113,15 +140,15 @@
   justify-content: center;
   align-items: center;
   :checked {
-    fill: var(--primary-color);
+    accent-color: var(--primary-color);
+  }
+  :indeterminate {
+    border: 3px solid var(--secondary-color);
   }
 }
 
 @media screen and (max-width: 768px) {
   .body {
     width: 650px;
-  }
-  .container form {
-    flex: 0.5;
   }
 }
