@@ -71,15 +71,19 @@
   background-color: var(--white);
 }
 
+.shadow {
+  box-shadow: var(--shadow);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   font-weight: bold;
-  box-shadow: var(--shadow);
   border-radius: 100px;
   padding: 12px 50px;
+  box-shadow: var(--shadow);
   border: 0px;
   transition: all 0.3s ease-in-out;
   text-transform: uppercase;
@@ -99,7 +103,7 @@
 .form-field {
   padding: 10px;
   outline: none;
-  border: 3px solid var(--secondary-color-light);
+  border: 4px solid var(--secondary-color-light);
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -127,6 +131,7 @@
 
 .row {
   row-gap: 5px;
+  margin-bottom: 1.5rem;
 }
 
 .form-group {

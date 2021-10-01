@@ -1,5 +1,7 @@
 const Input = ({ id, name, type, placeholder, isInvalid, children }) => {
-  const borderColor = isInvalid ? "form-field has-error" : "form-field";
+  const borderColor = isInvalid
+    ? "form-field has-error shadow"
+    : "form-field shadow";
   const inputType = type === "text" ? "w-full" : "checkbox";
 
   return (

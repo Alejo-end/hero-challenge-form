@@ -93,7 +93,9 @@ function IndexPage() {
             <select
               name="euResident"
               {...register("euResident")}
-              className={`form-field ${errors.euResident ? "has-error" : ""}`}
+              className={`form-field shadow ${
+                errors.euResident ? "has-error" : ""
+              }`}
             >
               <option value="">- SELECT ONE -</option>
               <option value="Yes">Yes</option>
