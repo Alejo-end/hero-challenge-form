@@ -1,20 +1,10 @@
-# with react-hook-form
-
-This example shows how to integrate react-hook-form in Next.js
-
-Form handling doesn't have to be painful. React Hook Form will help you write less code while achieving better performance. For more information, see [react-hook-form](https://react-hook-form.com)
+# Hero Form Challenge
 
 ## Preview
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+![image](https://user-images.githubusercontent.com/63655402/135629818-3c87719a-d3b5-49ff-9deb-bf0f5a22341e.png)
+![image](https://user-images.githubusercontent.com/63655402/135629928-ea7f9b13-d618-429b-8965-27c69c6e723e.png)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-react-hook-form)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com/now):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-react-hook-form&project-name=with-react-hook-form&repository-name=with-react-hook-form)
 
 ## How to use
 
@@ -25,5 +15,3 @@ npx create-next-app --example with-react-hook-form with-react-hook-form-app
 # or
 yarn create next-app --example with-react-hook-form with-react-hook-form-app
 ```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
