@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import Button from "../components/Button/Button";
+import Button from "../components/Button";
 import Layout from "../components/Layout";
 import ErrorMessage from "../components/ErrorMessage";
 import Label from "../components/Label";
 import Input from "../components/Input";
 import Check from "../components/icons/Check";
+import TextExpand from "../components/icons/TextExpand";
 
 function IndexPage() {
   // form validation rules
@@ -36,7 +37,7 @@ function IndexPage() {
 
   return (
     <Layout>
-      <div className="card-body">
+      <div className="body">
         <h1 className="title">Sign up for email updates</h1>
         <p className="sub-title">*Indicates Required Field</p>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -47,8 +48,9 @@ function IndexPage() {
               <Input
                 name="firstName"
                 type="text"
-                isInvalid={errors.firstName?.invalid}
-                {...register("firstName")}
+                isInvalid={errors.firstName ? true : false}
+                placeholder="e.g. John"
+                children={{ ...register("firstName") }}
               />
             </div>
             <div className="row">
@@ -57,8 +59,9 @@ function IndexPage() {
               <Input
                 name="lastName"
                 type="text"
-                isInvalid={errors.lastName?.invalid}
-                {...register("lastName")}
+                placeholder="e.g. Doe"
+                isInvalid={errors.lastName ? true : false}
+                children={{ ...register("lastName") }}
               />
             </div>
           </div>
@@ -69,8 +72,9 @@ function IndexPage() {
               <Input
                 name="email"
                 type="text"
-                isInvalid={errors.email}
-                {...register("email")}
+                placeholder="e.g. johndoe@mail.com"
+                isInvalid={errors.email ? true : false}
+                children={{ ...register("email") }}
               />
             </div>
             <div className="row">
@@ -78,8 +82,8 @@ function IndexPage() {
               <Input
                 name="org"
                 type="text"
-                isInvalid={errors.org}
-                {...register("org")}
+                placeholder="e.g. John Doe's Store"
+                children={{ ...register("org") }}
               />
             </div>
           </div>
@@ -87,9 +91,9 @@ function IndexPage() {
             <ErrorMessage>{errors.euResident?.message}</ErrorMessage>
             <Label>EU resident*</Label>
             <select
-              name="title"
-              {...register("title")}
-              className={`form-field ${errors.title ? "is-invalid" : ""}`}
+              name="euResident"
+              {...register("euResident")}
+              className={`form-field ${errors.euResident ? "has-error" : ""}`}
             >
               <option value="">- SELECT ONE -</option>
               <option value="Yes">Yes</option>
@@ -97,49 +101,56 @@ function IndexPage() {
             </select>
           </div>
           <div className="form-group form-check">
-            <ErrorMessage>{errors.fieldName?.message}</ErrorMessage>
-            <Input
-              name="fieldName"
-              type="checkbox"
-              id="fieldName"
-              isInvalid={errors.fieldName?.message}
-              {...register("fieldName")}
-            />
-            <label htmlFor="fieldName" className="form-check-label">
-              Advances
-            </label>
-            <Input
-              name="alerts"
-              type="checkbox"
-              id="alerts"
-              isInvalid={errors.alerts?.message}
-              {...register("alerts")}
-            />
-            <label htmlFor="alerts" className="form-check-label">
-              Alerts
-            </label>
-            <Input
-              name="other"
-              type="checkbox"
-              id="other"
-              isInvalid={errors.other?.message}
-              {...register("other")}
-            />
-            <label htmlFor="other" className="form-check-label">
-              Other communications
-            </label>
+            <div className="w-min">
+              <ErrorMessage>{errors.fieldName?.message}</ErrorMessage>
+              <Input
+                name="fieldName"
+                type="checkbox"
+                id="fieldName"
+                isInvalid={errors.fieldName?.message}
+                children={{ ...register("fieldName") }}
+              />
+              <label htmlFor="fieldName" className="form-check-label">
+                Advances
+              </label>
+            </div>
+            <div className="w-min">
+              <Input
+                name="alerts"
+                type="checkbox"
+                id="alerts"
+                children={{ ...register("alerts") }}
+              />
+              <label htmlFor="alerts" className="form-check-label">
+                Alerts
+              </label>
+            </div>
+            <div className="w-min">
+              <Input
+                name="other"
+                type="checkbox"
+                id="other"
+                children={{ ...register("other") }}
+              />
+              <label htmlFor="other" className="form-check-label">
+                Other communications
+              </label>
+            </div>
           </div>
           <div className="form-group">
-            <Button type="submit" children="Submit" onClick={handleSubmit} />
-            <Button type="button" children="Reset" onClick={reset} />
+            <Button
+              type="submit"
+              children="Submit"
+              color="primary"
+              onClick={handleSubmit}
+            />
             <button
               type="button"
               onClick={() => reset()}
-              className="btn btn-secondary"
+              className="btn bg-secondary"
             >
               Reset
             </button>
-            <Check />
           </div>
         </form>
       </div>

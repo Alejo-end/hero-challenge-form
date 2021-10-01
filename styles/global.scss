@@ -4,6 +4,7 @@
   --white: #fff;
   --light-border: #979898;
   --danger: #ff0000;
+  --danger-bg: #ff00001f;
   --primary-color: #803093;
   --secondary-color: #3f8794;
   --secondary-color-light: #d1e8e6;
@@ -36,22 +37,15 @@
   }
 }
 
+.body {
+  width: 1200px;
+}
+
 .error-msg {
   color: var(--danger);
   font: 1em sans-serif;
   font-style: italic;
   font-weight: bold;
-}
-
-.row {
-  margin: 10px 20px;
-}
-
-.row-remember {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--light-border);
-  padding: 0 0 15px 0;
 }
 
 .label {
@@ -60,11 +54,18 @@
   letter-spacing: 1px;
 }
 
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary-color);
   color: #ffffff;
   font-weight: normal;
   box-shadow: var(--shadow);
@@ -78,42 +79,49 @@
   }
 }
 .form-field {
-  width: 100%;
   padding: 10px;
   outline: none;
   border: 3px solid var(--secondary-color-light);
   margin-top: 5px;
   margin-bottom: 5px;
-  .has-error {
-    border: 3px solid var(--danger);
-  }
+}
+.has-error {
+  border: 3px solid var(--danger);
+  background-color: var(--danger-bg);
 }
 
-.form-group {
-  display: flex;
-  margin-right: 10px;
+.w-full {
+  width: 100%;
+}
+
+.w-min {
+  width: min-content;
 }
 
 .row {
-  flex-direction: row;
+  row-gap: 5px;
 }
 
-@media screen and (min-width: 768px) {
-  .container form {
-    flex: 0.5;
-    max-width: 600px;
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-right: 10px;
+  column-gap: 25px;
+}
+
+.form-check {
+  justify-content: center;
+  align-items: center;
+  :checked {
+    fill: var(--primary-color);
   }
 }
 
-.form-header {
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.error-label {
-  color: var(--danger);
-}
-
-.remember-label {
-  margin: 0 10px;
+@media screen and (max-width: 768px) {
+  .body {
+    width: 650px;
+  }
+  .container form {
+    flex: 0.5;
+  }
 }
